@@ -418,3 +418,37 @@ evaluar @decorate ("-ProfesoresFLP") finEval  //Deberá retornar "Hola:Robinson-
 (interpretador)
 
 
+;****************************************************************************************
+;CASOS DE PRUEBA PARA LOS PUNTOS DEL TALLER
+;****************************************************************************************
+
+#|
+===================================================================================
+PUNTO A (10 pts): Área de círculo con valores flotantes
+===================================================================================
+Fórmula: A = PI * r * r
+Usar PI = 3.1416
+
+Caso de prueba:
+--> declarar (
+      @radio=2.5;
+      @areaCirculo=procedimiento (@radio) haga (((3.1416*@r)*@r)) finProc
+    ) {
+      evaluar @areaCirculo(@radio) finEval
+    }
+
+Resultado esperado: 19.635 (aproximadamente)
+
+
+Prueba adicional con radio 5:
+--> declarar (
+      @radio=5;
+      @areaCirculo=procedimiento (@r) haga (((3.1416*@r)*@r)) finProc
+    ) {
+      evaluar @areaCirculo(@radio) finEval
+    }
+
+Resultado esperado: 78.54
+
+===================================================================================
+|#
