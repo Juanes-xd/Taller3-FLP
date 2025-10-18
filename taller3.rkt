@@ -145,6 +145,10 @@ evaluar @decorate ("-ProfesoresFLP") finEval  //Deberá retornar "Hola:Robinson-
      (digit (arbno digit)) number)
     (numero
      ("-" digit (arbno digit)) number)
+    (numero
+     (digit (arbno digit) "." digit (arbno digit)) number)
+    (numero
+     ("-" digit (arbno digit) "." digit (arbno digit)) number)
     ))
 
 ;Especificación Sintáctica (Gramática)
