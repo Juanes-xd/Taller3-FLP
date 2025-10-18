@@ -545,7 +545,48 @@ Pruebas combinadas (resta y multiplicación juntas):
 
 Resultado esperado: 37 (7 + 30)
 
+===================================================================================
+PUNTO E (25 pts): Decorador simple - Saludo a integrantes
+===================================================================================
+El decorador @saludar recibe una función y retorna otra función que agrega "Hola:"
 
+Caso de prueba:
+--> declarar (
+      @integrantes=procedimiento () haga "Juan-David-Jean" finProc;
+      @saludar=procedimiento (@f) haga 
+        procedimiento () haga 
+          ("Hola:" concat evaluar @f() finEval) 
+        finProc 
+      finProc
+    ) {
+      declarar (
+        @decorate=evaluar @saludar(@integrantes) finEval
+      ) {
+        evaluar @decorate() finEval
+      }
+    }
+
+Resultado esperado: "Hola:Juan-David-Jean"
+
+
+Prueba con otros nombres:
+--> declarar (
+      @integrantes=procedimiento () haga "Robinson-y-Sara" finProc;
+      @saludar=procedimiento (@f) haga 
+        procedimiento () haga 
+          ("Hola:" concat evaluar @f() finEval) 
+        finProc 
+      finProc
+    ) {
+      declarar (
+        @decorate=evaluar @saludar(@integrantes) finEval
+      ) {
+        evaluar @decorate() finEval
+      }
+    }
+
+Resultado esperado: "Hola:Robinson-y-Sara"
 
 ===================================================================================
 |#
+
