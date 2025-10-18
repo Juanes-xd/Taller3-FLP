@@ -3,9 +3,9 @@
 #|
 
 Taller 3
-Juan David Olaya - 2410206 - 3743
-Juan Esteban Ortiz - 2410227 - 3743
-Jean Pierre Cardenas - 2510003 - 3743
+Juan David Olaya - 202410206 - 3743
+Juan Esteban Ortiz - 202410227 - 3743
+Jean Pierre Cardenas - 202510003 - 3743
 
 
 1) Diseñe un interpretador para la siguiente gramática que realiza operaciones con notación infija:
@@ -232,10 +232,6 @@ evaluar @decorate ("-ProfesoresFLP") finEval  //Deberá retornar "Hola:Robinson-
 ; Definición de la función init-env
 (define init-env
   (lambda ()
-    ; Se llama a la función extend-env con tres argumentos:
-    ; 1. Una lista de símbolos: '@a', '@b', '@c', '@d', '@e'
-    ; 2. Una lista de valores asociados a los símbolos: 1, 2, 3, "hola", "FLP"
-    ; 3. El resultado de llamar a la función empty-env
     (extend-env
      '(@a @b @c @d @e)
      '(1 2 3 "hola" "FLP")
