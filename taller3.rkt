@@ -587,6 +587,68 @@ Prueba con otros nombres:
 
 Resultado esperado: "Hola:Robinson-y-Sara"
 
+
+===================================================================================
+PUNTO F (35 pts): Decorador con parámetro adicional
+===================================================================================
+El decorador recibe un mensaje adicional que se agrega al final
+
+Caso de prueba:
+--> declarar (
+      @integrantes=procedimiento () haga "Juan-David-Jean" finProc;
+      @saludar=procedimiento (@f) haga 
+        procedimiento (@msg) haga 
+          (("Hola:" concat evaluar @f() finEval) concat @msg) 
+        finProc 
+      finProc
+    ) {
+      declarar (
+        @decorate=evaluar @saludar(@integrantes) finEval
+      ) {
+        evaluar @decorate("-ProfesoresFLP") finEval
+      }
+    }
+
+Resultado esperado: "Hola:Juan-David-Jean-ProfesoresFLP"
+
+
+Prueba con mensaje diferente:
+--> declarar (
+      @integrantes=procedimiento () haga "Robinson-y-Sara" finProc;
+      @saludar=procedimiento (@f) haga 
+        procedimiento (@msg) haga 
+          (("Hola:" concat evaluar @f() finEval) concat @msg) 
+        finProc 
+      finProc
+    ) {
+      declarar (
+        @decorate=evaluar @saludar(@integrantes) finEval
+      ) {
+        evaluar @decorate("-EOPL-2025") finEval
+      }
+    }
+
+Resultado esperado: "Hola:Robinson-y-Sara-EOPL-2025"
+
+
+Prueba con despedida:
+--> declarar (
+      @integrantes=procedimiento () haga "Juan-David-Jean" finProc;
+      @saludar=procedimiento (@f) haga 
+        procedimiento (@msg) haga 
+          (("Hola:" concat evaluar @f() finEval) concat @msg) 
+        finProc 
+      finProc
+    ) {
+      declarar (
+        @decorate=evaluar @saludar(@integrantes) finEval
+      ) {
+        evaluar @decorate("-Bienvenidos") finEval
+      }
+    }
+
+Resultado esperado: "Hola:Juan-David-Jean-Bienvenidos"
+
 ===================================================================================
 |#
 
