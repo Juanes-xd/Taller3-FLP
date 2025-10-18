@@ -352,8 +352,11 @@ evaluar @decorate ("-ProfesoresFLP") finEval  //Deberá retornar "Hola:Robinson-
   (lambda (syms vals env)
     (extended-env-record syms vals env)))
 
-;función que extiende recursivamente el ambiente vinculando nombres de procedimientos, listas de argumentos y cuerpos.
-
+;Funcion para extender recursivamente el ambiente con procedimientos, listas de argumentos y body.
+(define extend-env-recursively
+  (lambda (proc-names idss bodies old-env)
+    (recursively-extended-env-record
+     proc-names idss bodies old-env)))
 
 ;Función que busca un símbolo en un ambiente
 ;Función llamada buscar-variable que toma dos argumentos: env (ambiente) y sym (un símbolo que representa una variable).
