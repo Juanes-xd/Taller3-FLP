@@ -370,7 +370,13 @@ evaluar @decorate ("-ProfesoresFLP") finEval  //Deberá retornar "Hola:Robinson-
                              (if (number? pos)
                                  (list-ref vals pos)
                                  (buscar-variable env sym))))
-
+(recursively-extended-env-record (proc-names idss bodies old-env)
+                                 (let ((pos (list-find-position sym proc-names)))
+                                   (if (number? pos)
+                                       (cerradura (list-ref idss pos)
+                                                (list-ref bodies pos)
+                                                env)
+                                       (buscar-variable old-env sym))))
       )))
 
 ;Una función que se encarga de crear closures (cerraduras)
