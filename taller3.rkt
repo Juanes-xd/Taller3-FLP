@@ -169,6 +169,9 @@ evaluar @decorate ("-ProfesoresFLP") finEval  //Deberá retornar "Hola:Robinson-
     (expresion ("procedimiento" "(" (separated-list identificador ",") ")" "haga" expresion "finProc" ) procedimiento-exp)
     (expresion ("evaluar" expresion "(" (separated-list expresion ",") ")" "finEval") app-exp)
 
+    ;Rcursivida
+    (expresion ("recursiva" (arbno identificador "(" (separated-list identificador ",") ")" "=" expresion)  "{" expresion "}") 
+           recursiva-exp)
 
     ;Primitivas-binarias
     (primitiva-binaria ("+") primitiva-suma)
