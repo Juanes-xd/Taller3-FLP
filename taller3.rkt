@@ -329,7 +329,10 @@ evaluar @decorate ("-ProfesoresFLP") finEval  //Deberá retornar "Hola:Robinson-
   (extended-env-record (syms (list-of symbol?))
                        (vals (list-of scheme-value?))
                        (env environment?))
-
+(recursively-extended-env-record (proc-names (list-of symbol?))
+                                 (idss (list-of (list-of symbol?)))
+                                 (bodies (list-of expresion?))
+                                 (env environment?))
   )
 
 
