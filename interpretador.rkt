@@ -428,23 +428,20 @@ Usar PI = 3.1416
 Caso de prueba:
 --> declarar (
       @radio=2.5;
-      @areaCirculo=procedimiento (@radio) haga (((3.1416*@r)*@r)) finProc
-    ) {
-      evaluar @areaCirculo(@radio) finEval
-    }
+      @areaCirculo= procedimiento (@radio) haga (3.14159265358979323846 *(@radio * @radio)) finProc
+      ) {
+          evaluar @areaCirculo(@radio) finEval
+        }
 
 Resultado esperado: 19.635 (aproximadamente)
 
 
 Prueba adicional con radio 5:
---> declarar (
-      @radio=5;
-      @areaCirculo=procedimiento (@r) haga (((3.1416*@r)*@r)) finProc
-    ) {
-      evaluar @areaCirculo(@radio) finEval
-    }
+ --> declarar( @radio=3.7;
+          @areaCirculo = procedimiento (@radio) haga (3.141592 * (@radio * @radio))
+          finProc ) { evaluar @areaCirculo(@radio) finEval }
 
-Resultado esperado: 78.54
+  Resltado esperado: 43.00839448000001
 
 ===================================================================================
 PUNTO B (5 pts): Factorial recursivo
@@ -527,19 +524,6 @@ Caso de prueba - Multiplicación:
     }
 
 Resultado esperado: 30
-
-
-Pruebas combinadas (resta y multiplicación juntas):
---> recursivo
-      @restar(@x,@y)=
-        Si @y entonces evaluar @restar(sub1(@x),sub1(@y)) finEval sino @x finSI
-      @multiplicar(@x,@y)=
-        Si @y entonces (@x + evaluar @multiplicar(@x,sub1(@y)) finEval) sino 0 finSI
-    {
-      (evaluar @restar(10,3) finEval + evaluar @multiplicar(10,3) finEval)
-    }
-
-Resultado esperado: 37 (7 + 30)
 
 ===================================================================================
 PUNTO E (25 pts): Decorador simple - Saludo a integrantes
