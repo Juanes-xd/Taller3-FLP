@@ -170,8 +170,8 @@ evaluar @decorate ("-ProfesoresFLP") finEval  //Deberá retornar "Hola:Robinson-
     (expresion ("evaluar" expresion "(" (separated-list expresion ",") ")" "finEval") app-exp)
 
     ;Rcursivida
-    (expresion ("recursiva" (arbno identificador "(" (separated-list identificador ",") ")" "=" expresion)  "{" expresion "}") 
-           recursiva-exp)
+    (expresion ("recursivo" (arbno identificador "(" (separated-list identificador ",") ")" "=" expresion)  "{" expresion "}") 
+           recursivo-exp)
 
     ;Primitivas-binarias
     (primitiva-binaria ("+") primitiva-suma)
@@ -278,8 +278,8 @@ evaluar @decorate ("-ProfesoresFLP") finEval  //Deberá retornar "Hola:Robinson-
                      (apply-procedure proc args)
                      (eopl:error 'eval-expresion
                                  "Intento de aplicar un no-procedimiento ~s" proc))))
-      (recursiva-exp (proc-names idss bodies recursiva-body)
-                     (eval-expresion recursiva-body
+      (recursivo-exp (proc-names idss bodies recursivo-body)
+                     (eval-expresion recursivo-body
                                      (extend-env-recursively proc-names idss bodies env)))
       ))
   )
