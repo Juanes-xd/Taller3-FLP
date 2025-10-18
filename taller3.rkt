@@ -278,7 +278,9 @@ evaluar @decorate ("-ProfesoresFLP") finEval  //Deberá retornar "Hola:Robinson-
                      (apply-procedure proc args)
                      (eopl:error 'eval-expresion
                                  "Intento de aplicar un no-procedimiento ~s" proc))))
-
+      (recursiva-exp (proc-names idss bodies recursiva-body)
+                     (eval-expresion recursiva-body
+                                     (extend-env-recursively proc-names idss bodies env)))
       ))
   )
 
