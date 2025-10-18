@@ -475,5 +475,36 @@ Caso de prueba - Factorial de 10:
 
 Resultado esperado: 3628800
 
+
+===================================================================================
+PUNTO C (10 pts): Suma recursivo usando add1 y sub1
+===================================================================================
+Sumar(a, b) = si b es 0, retorna a, sino Sumar(add1(a), sub1(b))
+
+Caso de prueba:
+--> recursivo
+      @sumar(@x,@y)=
+        Si @y entonces evaluar @sumar(add1(@x),sub1(@y)) finEval sino @x finSI
+    {
+      evaluar @sumar(4,5) finEval
+    }
+
+Resultado esperado: 9
+
+
+Prueba adicional:
+--> recursivo
+      @sumar(@x,@y)=
+        Si @y entonces evaluar @sumar(add1(@x),sub1(@y)) finEval sino @x finSI
+    {
+      evaluar @sumar(10,25) finEval
+    }
+
+Resultado esperado: 35
+
+
+
+
+
 ===================================================================================
 |#
