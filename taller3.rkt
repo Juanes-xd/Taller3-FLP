@@ -503,6 +503,47 @@ Prueba adicional:
 Resultado esperado: 35
 
 
+===================================================================================
+PUNTO D (15 pts): Restar y multiplicar usando solo add1 y sub1
+===================================================================================
+
+RESTA: Restar(a, b) = si b es 0, retorna a, sino Restar(sub1(a), sub1(b))
+
+Caso de prueba - Resta:
+--> recursivo
+      @restar(@x,@y)=
+        Si @y entonces evaluar @restar(sub1(@x),sub1(@y)) finEval sino @x finSI
+    {
+      evaluar @restar(10,3) finEval
+    }
+
+Resultado esperado: 7
+
+
+MULTIPLICACIÓN: Multiplicar(a, b) = si b es 0, retorna 0, sino a + Multiplicar(a, sub1(b))
+
+Caso de prueba - Multiplicación:
+--> recursivo
+      @multiplicar(@x,@y)=
+        Si @y entonces (@x + evaluar @multiplicar(@x,sub1(@y)) finEval) sino 0 finSI
+    {
+      evaluar @multiplicar(10,3) finEval
+    }
+
+Resultado esperado: 30
+
+
+Pruebas combinadas (resta y multiplicación juntas):
+--> recursivo
+      @restar(@x,@y)=
+        Si @y entonces evaluar @restar(sub1(@x),sub1(@y)) finEval sino @x finSI
+      @multiplicar(@x,@y)=
+        Si @y entonces (@x + evaluar @multiplicar(@x,sub1(@y)) finEval) sino 0 finSI
+    {
+      (evaluar @restar(10,3) finEval + evaluar @multiplicar(10,3) finEval)
+    }
+
+Resultado esperado: 37 (7 + 30)
 
 
 
