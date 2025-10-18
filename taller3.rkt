@@ -451,4 +451,29 @@ Prueba adicional con radio 5:
 Resultado esperado: 78.54
 
 ===================================================================================
+PUNTO B (5 pts): Factorial recursivo
+===================================================================================
+Factorial(n) = n * Factorial(n-1), con caso base Factorial(0) = 1
+
+Caso de prueba - Factorial de 5:
+--> recursivo
+      @factorial(@n)=
+        Si @n entonces (@n * evaluar @factorial((@n~1)) finEval) sino 1 finSI
+    {
+      evaluar @factorial(5) finEval
+    }
+
+Resultado esperado: 120
+
+Caso de prueba - Factorial de 10:
+--> recursivo
+      @factorial(@n)=
+        Si @n entonces (@n * evaluar @factorial((@n~1)) finEval) sino 1 finSI
+    {
+      evaluar @factorial(10) finEval
+    }
+
+Resultado esperado: 3628800
+
+===================================================================================
 |#
